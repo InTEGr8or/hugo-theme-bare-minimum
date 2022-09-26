@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" >
+  {{ partial "head.html" . }}
+    <body>
+        <div class="container">
+            <div class="content-container">
+                <!-- <pre>{{ .Page }}</pre> -->
+                <main>
+                    {{ block "main" . }}
+                    
+                    {{ end }}
+                </main>
+                <div class="sidebar">
+                    {{- partial "open-menu.html" . -}}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
