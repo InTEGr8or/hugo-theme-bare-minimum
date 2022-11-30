@@ -63,3 +63,16 @@ article h1,h2, h3, h4 {
     overflow-x: hidden;
     overflow-y: scroll;
 }
+div.signup{
+    padding: 10px;
+    margin: 10px;
+}
+
+div.email input.email{
+    padding: 10px;
+    width: 300px;
+}
+
+div.email{
+    margin: 10px;
+}
