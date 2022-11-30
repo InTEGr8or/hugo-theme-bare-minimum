@@ -51,15 +51,16 @@ article h1,h2, h3, h4 {
     font-family: FiraCodeBold;
 }
 
-.sidebar {
-    background: #f9f9f9;
-    word-wrap: normal;
-    border-right: 1px solid #eee;
-    font-size: 1.1em;
-    line-height: 1.8;
-    box-sizing: border-box;
-    grid-area: sidebar;
-    order: -1;
-    overflow-x: hidden;
-    overflow-y: scroll;
+div.signup{
+    padding: 10px;
+    margin: 10px;
+}
+
+div.email input.email{
+    padding: 10px;
+    width: 300px;
+}
+
+div.email{
+    margin: 10px;
 }
