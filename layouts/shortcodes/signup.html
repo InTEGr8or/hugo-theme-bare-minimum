@@ -1,11 +1,40 @@
 
 {{ $_hugo_config := `{ "version": 1 }` }}
 
-<div class="signup">
+<form class="signup" id="contact-us-form">
     <div class="email">
-        <input class="email" title="email" placeholder="Email address" />
+        <input name="email" class="email" title="email" placeholder="Email address" />
     </div>
     <div class="email">
         <button type="submit">Submit</button>
     </div>
-</div>
+</form>
+
+<script>
+    let tag = "form#contact-us-form";
+    let uriu = "https://akhy7i2ibwp7mep23teaib2wga0pypdu.lambda-url.us-east-1.on.aws/";
+    document.querySelector(tag).onsubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const contactForm = e.target;
+            const formData = {};
+            for (var i = 0; i < contactForm.length-1; i++){
+                if(contactForm[i].value) formData[contactForm[i].name] = contactForm[i].value
+            }
+            // const myform = new FormData(e.target);
+            let data = JSON.stringify(formData);
+            console.log(data);
+            const response = await fetch(uriu, {
+                method: "POST",
+                body: data,
+            });
+
+            if (!response.ok) {
+                return Promise.reject(response);
+            }
+            return await response.json();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+</script>
