@@ -12,8 +12,11 @@
 
 <script>
     let tag = "form#contact-us-form";
-    let uriu = "https://akhy7i2ibwp7mep23teaib2wga0pypdu.lambda-url.us-east-1.on.aws/";
+    let uriu = "https://juqghmrxicl6e4smrfjwyaaire0hcaan.lambda-url.us-east-1.on.aws/";
     document.querySelector(tag).onsubmit = async (e) => {
+        e.submitter.textContent = "Submitting";
+        e.submitter.disabled = true;
+        e.target.elements.email.disabled = true;
         e.preventDefault();
         try {
             const contactForm = e.target;
@@ -32,7 +35,10 @@
             if (!response.ok) {
                 return Promise.reject(response);
             }
-            return await response.json();
+            const result = await response.json();
+            e.submitter.style.backgroundColor = "#EEFFEE";
+            e.submitter.textContent = "Email submitted. Thanks."
+            return result;
         } catch (error) {
             console.log(error);
         }
