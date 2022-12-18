@@ -3,16 +3,17 @@
 
 <form class="signup" id="contact-us-form">
     <div class="email">
-        <input name="email" class="email" title="email" placeholder="Email address" />
+        <label for="email">Get the email monthly newsletter.</label>
+        <input name="email" id="email" class="email" title="email" placeholder="Email address" />
     </div>
     <div class="email">
-        <button type="submit">Submit</button>
+        <button type="submit">Sign up</button>
     </div>
 </form>
 
 <script>
     let tag = "form#contact-us-form";
-    let uriu = "https://juqghmrxicl6e4smrfjwyaaire0hcaan.lambda-url.us-east-1.on.aws/";
+    let uriu = "https://z2z4aaf77ua232x5h5iad6f7gq0lnrwf.lambda-url.us-east-1.on.aws";
     document.querySelector(tag).onsubmit = async (e) => {
         e.submitter.textContent = "Submitting";
         e.submitter.disabled = true;
