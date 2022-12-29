@@ -64,3 +64,6 @@ div.email input.email{
 div.email{
     margin: 10px;
 }
+label.email {
+    padding: 10px;
+}
