@@ -2,6 +2,10 @@
 <html lang="{{ .Site.LanguageCode }}" >
   {{ partial "head.html" . }}
     <body>
+    {{- block "nav" . }}
+		{{ partial "nav.html" . }}
+	{{- end }}
+
         <div class="container">
             <div class="content-container">
                 <main>
@@ -9,9 +13,6 @@
                     
                     {{ end }}
                 </main>
-                <div class="sidebar">
-                    {{- partial "open-menu.html" . -}}
-                </div>
             </div>
         </div>
     </body>
